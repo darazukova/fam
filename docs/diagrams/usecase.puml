@@ -1,0 +1,27 @@
+@startuml
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Arial
+
+actor "Родитель" as Parent
+actor "Ребенок" as Child
+
+rectangle "FamTrack" {
+  usecase "Получает информацию\nоб общей сумме расходов" as UC1
+  usecase "Просматривает\nоперации всей семьи" as UC2
+  usecase "Добавляет данные\nо расходах" as UC3
+  usecase "Указывает категории\nрасходов" as UC4
+  usecase "Просматривает\nдобавленные расходы" as UC5
+  usecase "Редактирует и удаляет\nзаписи о расходах" as UC6
+}
+
+Parent --|> Child
+
+Parent --> UC1
+Parent --> UC2
+
+Child --> UC3
+Child --> UC4
+Child --> UC5
+Child --> UC6
+@enduml
